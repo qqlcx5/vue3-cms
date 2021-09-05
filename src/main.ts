@@ -8,7 +8,14 @@ import store from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+import hyRequest from './service'
+
 // registerApp(app)
 const app = createApp(App)
 
 app.use(store).use(router).use(ElementPlus).mount('#app')
+
+hyRequest.request({
+  url: '/home/multidata',
+  method: 'GET',
+})
